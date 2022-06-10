@@ -18,7 +18,7 @@ export default function App() {
         <About />
       </Route>
       <Route path='/stocks'>
-        <Stocks />
+        <Stocks data={data}/>
       </Route>
       <Route path='/stocks/:symbol'>
         <CompanyStock />

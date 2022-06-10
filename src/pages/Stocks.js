@@ -1,7 +1,15 @@
-export default function Stock(prop) {
+import { Link } from "react-router-dom";
+export default function Stock({ data }) {
 	return (
 		<>
-			<h1>Stock</h1>
+			{data.map((stock) => {
+				const { name } = stock;
+				return (
+					<Link to={`/stocks/${name}`}>
+						<div>{name}</div>
+					</Link>
+				);
+			})}
 		</>
 	);
 }
