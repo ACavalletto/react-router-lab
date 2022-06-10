@@ -14,6 +14,15 @@ export default function App() {
       <Route exact path='/'>
         <Main />
       </Route>
+      <Route path='/about'>
+        <About />
+      </Route>
+      <Route path='/stocks'>
+        <Stocks />
+      </Route>
+      <Route path='/stocks/:symbol'>
+        <Stocks />
+      </Route>
 		</>
 	);
 }
