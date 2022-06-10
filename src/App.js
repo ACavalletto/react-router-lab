@@ -21,7 +21,7 @@ export default function App() {
         <Stocks />
       </Route>
       <Route path='/stocks/:symbol'>
-        <Stocks />
+        <CompanyStock />
       </Route>
 		</>
 	);

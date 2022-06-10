@@ -7,7 +7,7 @@ return(
     <Link to='/'>
       <div>iStocks</div>
     </Link>
-    <Link to='/companystocks'>
+    <Link to='/stocks'>
       <div>Stocks</div>
     </Link>
     <Link to='/about'>
