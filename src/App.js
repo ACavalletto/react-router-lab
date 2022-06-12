@@ -1,6 +1,6 @@
 import "./styles.css";
 import data from "./data";
-import {Route} from 'react-router-dom'
+import { Route } from "react-router-dom";
 import Main from "./pages/Main";
 import Stocks from "./pages/Stocks";
 import About from "./pages/About";
@@ -11,18 +11,19 @@ export default function App() {
 	return (
 		<>
 			<Nav />
-      <Route exact path='/'>
-        <Main />
-      </Route>
-      <Route path='/about'>
-        <About />
-      </Route>
-      <Route path='/stocks'>
-        <Stocks data={data}/>
-      </Route>
-      <Route path='/stocks/:symbol'>
-        <CompanyStock />
-      </Route>
+			<Route exact path="/">
+				<Main />
+			</Route>
+			<Route path="/about">
+				<About />
+			</Route>
+			<Route exact path="/stocks">
+				<Stocks data={data} />
+			</Route>
+			<Route 
+				path="/stocks/:symbol"
+				render={(renderProps) => <CompanyStock {...renderProps} data={data.find(company=>{return company.name === renderProps.match.params.symbol})}/>}
+			/>
 		</>
 	);
 }
