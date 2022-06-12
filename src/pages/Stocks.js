@@ -5,7 +5,7 @@ export default function Stock({ data }) {
 			{data.map((stock) => {
 				const { name } = stock;
 				return (
-					<Link to={`/stocks/${name}`}>
+					<Link to={`/stock/${name}`}>
 						<div>{name}</div>
 					</Link>
 				);

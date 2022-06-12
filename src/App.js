@@ -17,12 +17,19 @@ export default function App() {
 			<Route path="/about">
 				<About />
 			</Route>
-			<Route exact path="/stocks">
+			<Route path="/stocks">
 				<Stocks data={data} />
 			</Route>
-			<Route 
-				path="/stocks/:symbol"
-				render={(renderProps) => <CompanyStock {...renderProps} data={data.find(company=>{return company.name === renderProps.match.params.symbol})}/>}
+			<Route
+				path="/stock/:symbol"
+				render={(renderProps) => (
+					<CompanyStock
+						{...renderProps}
+						data={data.find((company) => {
+							return company.name === renderProps.match.params.symbol;
+						})}
+					/>
+				)}
 			/>
 		</>
 	);
